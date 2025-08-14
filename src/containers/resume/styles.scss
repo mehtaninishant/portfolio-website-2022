@@ -1,20 +1,43 @@
-.resume{
+.resume {
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+
+    &__pdf-link {
+        margin-bottom: 20px;
+        margin-top: 20px;
+        margin-left: 60px;
+        display: flex;
+        justify-content: left;
+        align-items: left;
+
+        a {
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            color: rgb(249, 249, 12);
+            
+            &:hover {
+                color: var(--yellow-theme-hover-color);
+            }
+        }
+    }
 }
 
-.timeline{
+.timeline {
     display: flex;
     width: 100%;
     padding: 20px;
 
-    &__experience, &__education{
-        width: 50%;
+    &__experience {
+        width: 100%; // Full width for the experience section
         gap: 2rem;
         display: flex;
         flex-direction: column;
         align-items: center;
 
-        &__header-text{
+        &__header-text {
             display: inline-block;
             color: var(--yellow-theme-sub-text-color);
             font-size: 22px;
@@ -27,7 +50,8 @@
             border-bottom: 2px solid var(--yellow-theme-main-color);
         }
 
-        &__header-text::before , &__header-text::after{
+        &__header-text::before,
+        &__header-text::after {
             position: absolute;
             content: '';
             width: 2px;
@@ -36,49 +60,48 @@
             bottom: -1px;
         }
 
-        &__header-text::before{
+        &__header-text::before {
             left: 0;
         }
 
-        &__header-text::after{
+        &__header-text::after {
             right: 0;
         }
 
-        &__vertical-timeline-element{
+        &__vertical-timeline-element {
             padding: 0px 0px 30px 0px;
 
-            &:last-child{
+            &:last-child {
                 padding-bottom: 0px;
             }
         }
-        .vertical-timeline-element-title-wrapper{
+        
+        .vertical-timeline-element-title-wrapper {
             display: flex;
             align-items: center;
 
-            h3,h4{
+            h3, h4 {
                 font-size: 16px;
             }
 
-            h4{
+            h4 {
                 margin-left: 8px;
             }
-
-
         }
 
-        .vertical-timeline-element-title-wrapper-description{
+        .vertical-timeline-element-title-wrapper-description {
             font-size: 18px;
         }
 
-        .vertical-timeline-element-content{
+        .vertical-timeline-element-content {
             box-shadow: none;
         }
 
-        .vertical-timeline-element-content-arrow{
+        .vertical-timeline-element-content-arrow {
             display: none;
         }
 
-        .vertical-timeline-element-date{
+        .vertical-timeline-element-date {
             opacity: 1;
             color: var(--yellow-theme-sub-text-color);
             font-size: 18px;
@@ -86,10 +109,11 @@
     }
 }
 
-@media only screen and (max-width : 768px){
-    .timeline{
+@media only screen and (max-width: 768px) {
+    .timeline {
         flex-direction: column;
-        &__experience, &__education{
+        
+        &__experience {
             width: 100%;
             gap: 2rem;
         }

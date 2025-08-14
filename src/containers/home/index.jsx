@@ -14,27 +14,34 @@ const Home = () => {
     <section id="home" className="home">
       <div className="home__text-wrapper">
         <h1>
-          Hello, I'm John
+          Hello, I'm <span className="highlight">Nishant Kumar</span>
           <br />
-          Front end developer
+          Competitive Programmer &
+          Web Developer
+          {/* <br /> */}
         </h1>
       </div>
       <Animate
         play
-        duration={1.5}
+        duration={1.0}
         delay={1}
         start={{
           transform: "translateY(550px)",
         }}
         end={{
-          transform: "translatex(0px)",
+          transform: "translateY(0px)",  // Corrected to 'translateY' for a smooth vertical animation
         }}
       >
         <div className="home__contact-me">
-          <button onClick={handleNavigateToContactMePage}>Hire Me</button>
+          <button onClick={handleNavigateToContactMePage} className="hire-button">
+            Hire Me
+          </button>
         </div>
       </Animate>
     </section>
   );
 };
+
 export default Home;
+
+

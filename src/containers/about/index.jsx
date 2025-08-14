@@ -1,36 +1,13 @@
 import React from "react";
 import { BsInfoCircleFill } from "react-icons/bs";
+import { FaLinkedin, FaGithub, FaDev, FaDatabase } from "react-icons/fa";
+import { DiApple, DiAndroid } from "react-icons/di";
 import PageHeaderContent from "../../components/pageHeaderContent";
 import { Animate } from "react-simple-animate";
 import "./styles.scss";
-import { DiApple, DiAndroid } from "react-icons/di";
-import { FaDev, FaDatabase } from "react-icons/fa";
-
-const personalDetails = [
-  {
-    label: "Name",
-    value: "John Doe",
-  },
-  {
-    label: "Age",
-    value: "27",
-  },
-  {
-    label: "Address",
-    value: "India",
-  },
-  {
-    label: "Email",
-    value: "demo@example.com",
-  },
-  {
-    label: "Contact No",
-    value: "+11 3456789056",
-  },
-];
 
 const jobSummary =
-  "Seasoned and independent Front End Developer with 5 years of experience in blending the art of design with skill of programming to deliver an immersive and engaging user experience through efficient website development, proactive feature optimization, and relentless debugging. Very passionate about aesthetics and UI design. It is imperative that you provide a thorough and professional approach to your resume. As a Front End Developer you will be judged by your ability to use UX and UI concepts and follow design guidelines. It is about expressing your attention to detail and how you can help implement design ideas for your future employer";
+  "I am a final-year undergraduate student at the National Institute of Technology Durgapur, pursuing a B.Tech in Biotechnology. A self-driven, quick starter and passionate programmer, I enjoy tackling complex real-world challenges through competitive programming and web development. I am dedicated to bringing 100% to all my projects and continually expanding my skills in software development.";
 
 const About = () => {
   return (
@@ -40,70 +17,80 @@ const About = () => {
         icon={<BsInfoCircleFill size={40} />}
       />
       <div className="about__content">
+        {/* Personal Wrapper with LinkedIn and GitHub */}
         <div className="about__content__personalWrapper">
           <Animate
             play
             duration={1.5}
-            delay={1}
+            delay={0.5}
             start={{
-              transform: "translateX(-900px)",
+              transform: "translateY(50px)",
+              opacity: 0,
             }}
             end={{
-              transform: "translatex(0px)",
+              transform: "translateY(0)",
+              opacity: 1,
             }}
           >
-            <h3>Front End Developer</h3>
+            {/* <h3>Front End Developer</h3> */}
             <p>{jobSummary}</p>
-          </Animate>
 
-          <Animate
-            play
-            duration={1.5}
-            delay={1}
-            start={{
-              transform: "translateX(500px)",
-            }}
-            end={{
-              transform: "translatex(0px)",
-            }}
-          >
-            <h3 className="personalInformationHeaderText">
-              Personal Information
-            </h3>
-            <ul>
-              {personalDetails.map((item, i) => (
-                <li key={i}>
-                  <span className="title">{item.label}</span>
-                  <span className="value">{item.value}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="about__content__personalWrapper_x">
+            <h2>LinkedIn</h2>
+            <a
+              href="https://in.linkedin.com/in/nishant-kumar-114b86224?trk=public_profile_browsemap"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="linkedin-link"
+            >
+              <FaLinkedin size={60} color="#0077b5" />
+              <span>View LinkedIn Profile</span>
+            </a>
+            </div>
+
+            <div className="about__content__personalWrapper_y">
+            <h1>GitHub</h1>
+            <a
+              href="https://github.com/nishantkumar"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="github-link"
+            >
+              <FaGithub size={60} color="#333" />
+              <span>View GitHub Profile</span>
+            </a>
+            </div>
+
           </Animate>
         </div>
+
+        {/* Services Wrapper */}
         <div className="about__content__servicesWrapper">
           <Animate
             play
             duration={1.5}
-            delay={1}
+            delay={0.5}
             start={{
-              transform: "translateX(600px)",
+              transform: "translateY(50px)",
+              opacity: 0,
             }}
             end={{
-              transform: "translatex(0px)",
+              transform: "translateY(0)",
+              opacity: 1,
             }}
           >
             <div className="about__content__servicesWrapper__innerContent">
               <div>
-                <FaDev size={60} color="var( --yellow-theme-main-color)" />
+                <FaDev size={60} color="#ff6347" />
               </div>
               <div>
-                <DiAndroid size={60} color="var( --yellow-theme-main-color)" />
+                <DiAndroid size={60} color="#ff6347" />
               </div>
               <div>
-                <FaDatabase size={60} color="var( --yellow-theme-main-color)" />
+                <FaDatabase size={60} color="#ff6347" />
               </div>
               <div>
-                <DiApple size={60} color="var( --yellow-theme-main-color)" />
+                <DiApple size={60} color="#ff6347" />
               </div>
             </div>
           </Animate>
@@ -112,4 +99,6 @@ const About = () => {
     </section>
   );
 };
+
 export default About;
+
